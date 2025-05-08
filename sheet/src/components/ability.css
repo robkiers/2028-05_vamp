@@ -1,0 +1,11 @@
+.ability-input {
+  --color-border: lightgray;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.125rem;
+  input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+}

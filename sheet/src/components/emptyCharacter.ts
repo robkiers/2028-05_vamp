@@ -1,0 +1,81 @@
+import type { Character } from "./character";
+
+const emptyCharacter: Character = {
+  general: {
+    characterName: "",
+    playerName: "",
+    chronicleName: "",
+    nature: "",
+    demeanor: "",
+    concept: "",
+    clan: "",
+    generation: 13,
+    sire: "",
+  },
+  physical: {
+    strength: { value: 5 },
+    dexterity: { value: 2 },
+    stamina: { value: 1 },
+  },
+  social: {
+    charisma: { value: 1 },
+    manipulation: { value: 1 },
+    appearance: { value: 1 },
+  },
+  mental: {
+    perception: { value: 1 },
+    intelligence: { value: 1 },
+    wits: { value: 1 },
+  },
+  talent: {
+    alertness: { value: 0 },
+    athletics: { value: 0 },
+    awareness: { value: 0 },
+    brawl: { value: 0 },
+    empathy: { value: 0 },
+    expression: { value: 0 },
+    intimidation: { value: 0 },
+    leadership: { value: 0 },
+    legerdemain: { value: 0 },
+    subterfuge: { value: 0 },
+  },
+  skill: {
+    animalKen: { value: 0 },
+    archery: { value: 0 },
+    commerce: { value: 0 },
+    brawl: { value: 0 },
+    etiquette: { value: 0 },
+    melee: { value: 0 },
+    performance: { value: 0 },
+    ride: { value: 0 },
+    stealth: { value: 0 },
+    survival: { value: 0 },
+  },
+  knowledge: {
+    academics: { value: 0 },
+    enigmas: { value: 0 },
+    hearthWisdom: { value: 0 },
+    investigation: { value: 0 },
+    law: { value: 0 },
+    occult: { value: 0 },
+    medicine: { value: 0 },
+    politics: { value: 0 },
+    seneschal: { value: 0 },
+    theology: { value: 0 },
+  },
+  virtue: {
+    continence: 0,
+    disposition: 0,
+    courage: 0,
+  },
+  other: {
+    roadName: "",
+    roadRating: 0,
+    roadAura: "",
+    willpower: 0,
+    bloodPool: 0,
+  },
+  id: "",
+};
+
+export default emptyCharacter;
