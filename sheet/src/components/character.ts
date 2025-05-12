@@ -11,6 +11,7 @@ export interface Character {
   id: string;
 }
 
+export type CharacterSelect = Pick<Character, "id" | "general">;
 export interface CharacterProperty {
   value: number;
   specialization?: string;
@@ -156,4 +157,4 @@ export const characterSectionKeys = {
 
 export type CharacterSection = keyof typeof characterSectionKeys;
 export type CharacterKey<S extends CharacterSection> =
-  typeof characterSectionKeys[S][number];
+  (typeof characterSectionKeys)[S][number];

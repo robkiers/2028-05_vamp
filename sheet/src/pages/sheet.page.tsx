@@ -45,30 +45,28 @@ const SheetPage = () => {
                 <h2>{section.toUpperCase()}</h2>
                 {keys.map((key) => {
                   const value = values[key as keyof typeof values];
-                  return (
-                    <>
-                      {/* add proper typeguard */}
-                      {typeof value === "object" ? (
-                        <CharacterPropertyInput
-                          key={key}
-                          label={key}
-                          value={value.value}
-                          specialization={value.specialization}
+                  const component =
+                    // add proper type guard
+                    typeof value === "object" ? (
+                      <CharacterPropertyInput
+                        key={key}
+                        label={key}
+                        value={value.value}
+                        specialization={value.specialization}
+                      />
+                    ) : (
+                      // convert to proper component
+                      <div key={key} className="character-input__container">
+                        {key}
+                        <input
+                          type="text"
+                          name={key}
+                          defaultValue={value}
+                          className="character-input"
                         />
-                      ) : (
-                        // convert to proper component
-                        <div key={key} className="character-input__container">
-                          {key}
-                          <input
-                            type="text"
-                            name={key}
-                            defaultValue={value}
-                            className="character-input"
-                          />
-                        </div>
-                      )}
-                    </>
-                  );
+                      </div>
+                    );
+                  return component;
                 })}
               </div>
             );
@@ -82,15 +80,13 @@ const SheetPage = () => {
         <button
           type="button"
           className="sheet-form__cancel"
-          onClick={handleCancel}
-        >
+          onClick={handleCancel}>
           Cancel
         </button>
         <button
           type="button"
           className="sheet-form__cancel"
-          onClick={handlePrint}
-        >
+          onClick={handlePrint}>
           Print
         </button>
       </section>
